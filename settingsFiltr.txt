@@ -1,0 +1,6 @@
+increasePriority=#
+definedPriorities=#
+completedTasks=#
+category=#
+upcomingTasks=#
+filter_by_date_or_priority=1
