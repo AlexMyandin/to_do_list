@@ -1,65 +1,65 @@
-#include "ToDoView.h"
+ï»¿#include "ToDoView.h"
 #include <iostream>
 #include <Windows.h>
 
 void ToDoView::displayMenu() const {
-    std::cout << "1. Äîáàâèòü çàäà÷ó" << std::endl;
-    std::cout << "2. Óäàëèòü çàäà÷ó" << std::endl;
-    std::cout << "3. Îòìåòèòü çàäà÷ó êàê âûïîëíåííóþ" << std::endl;
-    std::cout << "4. Ïîêàçàòü âñå çàäà÷è" << std::endl;
-    std::cout << "5. Íàñòðîèòü ôèëüòð" << std::endl;
-    std::cout << "6. Ýêñïîðò çàäà÷ â ôîðìàòå CSV" << std::endl;
-    std::cout << "7. Èìïîðò çàäà÷ â ôîðìàòå CSV" << std::endl;
-    std::cout << "8. Âûõîä" << std::endl;
+    std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ" << std::endl;
+    std::cout << "2. Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ" << std::endl;
+    std::cout << "3. ÐžÑ‚Ð¼ÐµÑ‚Ð¸Ñ‚ÑŒ Ð·Ð°Ð´Ð°Ñ‡Ñƒ ÐºÐ°Ðº Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð½ÑƒÑŽ" << std::endl;
+    std::cout << "4. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ Ð²ÑÐµ Ð·Ð°Ð´Ð°Ñ‡Ð¸" << std::endl;
+    std::cout << "5. ÐÐ°ÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€" << std::endl;
+    std::cout << "6. Ð­ÐºÑÐ¿Ð¾Ñ€Ñ‚ Ð·Ð°Ð´Ð°Ñ‡ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ CSV" << std::endl;
+    std::cout << "7. Ð˜Ð¼Ð¿Ð¾Ñ€Ñ‚ Ð·Ð°Ð´Ð°Ñ‡ Ð² Ñ„Ð¾Ñ€Ð¼Ð°Ñ‚Ðµ CSV" << std::endl;
+    std::cout << "8. Ð’Ñ‹Ñ…Ð¾Ð´" << std::endl;
 }
 
 void ToDoView::displayMenuFilter() const {
-    std::cout << "1. Ôèëüòð ïî ïðèîðèòåòàì" << std::endl;
-    std::cout << "2. Ôèëüòð ïî ñòàòóñó çàäà÷è" << std::endl;
-    std::cout << "3. Ôèëüòð ïî êàòåãîðèè" << std::endl;
-    std::cout << "4. Ôèëüòð ïî äàòå" << std::endl;
-    std::cout << "5. Î÷èñòèòü ôèëüòðû" << std::endl;
-    std::cout << "6. íàçàä" << std::endl;
+    std::cout << "1. Ð¤Ð¸Ð»ÑŒÑ‚Ñ€ Ð¿Ð¾ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð°Ð¼" << std::endl;
+    std::cout << "2. Ð¤Ð¸Ð»ÑŒÑ‚Ñ€ Ð¿Ð¾ ÑÑ‚Ð°Ñ‚ÑƒÑÑƒ Ð·Ð°Ð´Ð°Ñ‡Ð¸" << std::endl;
+    std::cout << "3. Ð¤Ð¸Ð»ÑŒÑ‚Ñ€ Ð¿Ð¾ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸" << std::endl;
+    std::cout << "4. Ð¤Ð¸Ð»ÑŒÑ‚Ñ€ Ð¿Ð¾ Ð´Ð°Ñ‚Ðµ" << std::endl;
+    std::cout << "5. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ñ‹" << std::endl;
+    std::cout << "6. Ð½Ð°Ð·Ð°Ð´" << std::endl;
 };
 
 
 void ToDoView::displayMenuFilterPriority() const {
-    std::cout << "1. Îòôèëüòðîâàòü ïî âîçðàñòàíèþ ïðèîðèòåòîâ" << std::endl;
-    std::cout << "2. Îòôèëüòðîâàòü ïî óáûâàíèþ ïðèîðèòåòîâ" << std::endl;
-    std::cout << "3. Äîáàâèòü ôèëüòð íà îïðåäåëåííûé ïðèîðèòåò" << std::endl;
-    std::cout << "4. Ñäåëàòü îñíîâíûì ôèëüòðîì" << std::endl;
-    std::cout << "5. Î÷èñòèòü íàñòðîéêè ôèëüòðà" << std::endl;
-    std::cout << "6. íàçàä" << std::endl;
+    std::cout << "1. ÐžÑ‚Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ð¾ Ð²Ð¾Ð·Ñ€Ð°ÑÑ‚Ð°Ð½Ð¸ÑŽ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð¾Ð²" << std::endl;
+    std::cout << "2. ÐžÑ‚Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ð¾ ÑƒÐ±Ñ‹Ð²Ð°Ð½Ð¸ÑŽ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚Ð¾Ð²" << std::endl;
+    std::cout << "3. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€ Ð½Ð° Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð½Ñ‹Ð¹ Ð¿Ñ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚" << std::endl;
+    std::cout << "4. Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð¾ÑÐ½Ð¾Ð²Ð½Ñ‹Ð¼ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð¾Ð¼" << std::endl;
+    std::cout << "5. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°" << std::endl;
+    std::cout << "6. Ð½Ð°Ð·Ð°Ð´" << std::endl;
 };
 void ToDoView::displayMenuFilterStatus() const {
-    std::cout << "1. Ïîñòàâèòü ôèëüòîð íà âûïîëíåíûå çàäàíèÿ" << std::endl;
-    std::cout << "2. Ïîñòàâèòü ôèëüòîð íà íå âûïîëíåíûå çàäàíèÿ" << std::endl;
-    std::cout << "3. Î÷èñòèòü íàñòðîéêè ôèëüòðà" << std::endl;
-    std::cout << "4. íàçàä" << std::endl;
+    std::cout << "1. ÐŸÐ¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ð¾Ñ€ Ð½Ð° Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ñ‹Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ" << std::endl;
+    std::cout << "2. ÐŸÐ¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ð¾Ñ€ Ð½Ð° Ð½Ðµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ñ‹Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ" << std::endl;
+    std::cout << "3. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°" << std::endl;
+    std::cout << "4. Ð½Ð°Ð·Ð°Ð´" << std::endl;
 };
 void ToDoView::displayMenuFilterCategory() const {
-    std::cout << "1. Äîáàâèòü â ôèëüòåð êàòåãîðèþ" << std::endl;
-    std::cout << "2. Î÷èñòèòü íàñòðîéêè ôèëüòðà" << std::endl;
-    std::cout << "3. íàçàä" << std::endl;
+    std::cout << "1. Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð² Ñ„Ð¸Ð»ÑŒÑ‚ÐµÑ€ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸ÑŽ" << std::endl;
+    std::cout << "2. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°" << std::endl;
+    std::cout << "3. Ð½Ð°Ð·Ð°Ð´" << std::endl;
 };
 void ToDoView::displayMenuFilterDate() const {
-    std::cout << "1. Ïîñòàâèòü ôèëüòð íà ñàìûå áëèæàéæèå çàäà÷è " << std::endl;
-    std::cout << "2. Ïîñòàâèòü ôèëüòð íà ñàìûå äàëåêèå çàäà÷è " << std::endl;
-    std::cout << "3. Ñäåëàòü îñíîâíûì ôèëüòðîì" << std::endl;
-    std::cout << "4. Î÷èñòèòü íàñòðîéêè ôèëüòðà" << std::endl;
-    std::cout << "5. íàçàä" << std::endl;
+    std::cout << "1. ÐŸÐ¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€ Ð½Ð° ÑÐ°Ð¼Ñ‹Ðµ Ð±Ð»Ð¸Ð¶Ð°Ð¹Ð¶Ð¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ " << std::endl;
+    std::cout << "2. ÐŸÐ¾ÑÑ‚Ð°Ð²Ð¸Ñ‚ÑŒ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€ Ð½Ð° ÑÐ°Ð¼Ñ‹Ðµ Ð´Ð°Ð»ÐµÐºÐ¸Ðµ Ð·Ð°Ð´Ð°Ñ‡Ð¸ " << std::endl;
+    std::cout << "3. Ð¡Ð´ÐµÐ»Ð°Ñ‚ÑŒ Ð¾ÑÐ½Ð¾Ð²Ð½Ñ‹Ð¼ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð¾Ð¼" << std::endl;
+    std::cout << "4. ÐžÑ‡Ð¸ÑÑ‚Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ñ„Ð¸Ð»ÑŒÑ‚Ñ€Ð°" << std::endl;
+    std::cout << "5. Ð½Ð°Ð·Ð°Ð´" << std::endl;
 };
 
 
 
 void ToDoView::displayTasks(const std::vector<Task>& tasks) const {
     for (const Task& task : tasks) {
-        std::cout << "Çàäà÷à: " << task.getTitle() << std::endl;
-        std::cout << "Îïèñàíèå: " << task.getDescription() << std::endl;
-        std::cout << "Êàòåãîðèÿ: " << task.getCategory() << std::endl;
-        std::cout << "Ïðèîðèòåò: " << task.getPriority() << std::endl;
-        std::cout << "Ñðîê âûïîëíåíèÿ: " << task.getDueDate() << std::endl;
-        std::cout << "Ñòàòóñ: " << (task.isCompleted() ? "Âûïîëíåíî" : "Íå âûïîëíåíî") << std::endl;
+        std::cout << "Ð—Ð°Ð´Ð°Ñ‡Ð°: " << task.getTitle() << std::endl;
+        std::cout << "ÐžÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ: " << task.getDescription() << std::endl;
+        std::cout << "ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ: " << task.getCategory() << std::endl;
+        std::cout << "ÐŸÑ€Ð¸Ð¾Ñ€Ð¸Ñ‚ÐµÑ‚: " << task.getPriority() << std::endl;
+        std::cout << "Ð¡Ñ€Ð¾Ðº Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¸Ñ: " << task.getDueDate() << std::endl;
+        std::cout << "Ð¡Ñ‚Ð°Ñ‚ÑƒÑ: " << (task.isCompleted() ? "Ð’Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¾" : "ÐÐµ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÐµÐ½Ð¾") << std::endl;
         std::cout << "----------------------------------------" << std::endl;
     }
 }

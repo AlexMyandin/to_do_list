@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 #include <vector>
 #include <limits>
@@ -16,7 +16,7 @@ public:
     void filterMenu();
     void filterPriority();
     void filterStatus();
-    void filter�ategory();
+    void filterСategory();
     void filterDate();
 
     void viewFilterPriority();

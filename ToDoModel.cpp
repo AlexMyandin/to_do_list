@@ -1,32 +1,32 @@
-#include "ToDoModel.h"
+п»ї#include "ToDoModel.h"
 
 
 
-// Функция для обрезки пробелов в начале и в конце строки
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕР±СЂРµР·РєРё РїСЂРѕР±РµР»РѕРІ РІ РЅР°С‡Р°Р»Рµ Рё РІ РєРѕРЅС†Рµ СЃС‚СЂРѕРєРё
 string ToDoModel::trim(const std::string& str) {
     if (str.empty()) {
         return str;
     }
 
-    // Находим первый непробельный символ с начала строки
+    // РќР°С…РѕРґРёРј РїРµСЂРІС‹Р№ РЅРµРїСЂРѕР±РµР»СЊРЅС‹Р№ СЃРёРјРІРѕР» СЃ РЅР°С‡Р°Р»Р° СЃС‚СЂРѕРєРё
     size_t start = str.find_first_not_of(" \t\n\r");
-    // Находим первый непробельный символ с конца строки
+    // РќР°С…РѕРґРёРј РїРµСЂРІС‹Р№ РЅРµРїСЂРѕР±РµР»СЊРЅС‹Р№ СЃРёРјРІРѕР» СЃ РєРѕРЅС†Р° СЃС‚СЂРѕРєРё
     size_t end = str.find_last_not_of(" \t\n\r");
 
-    // Если строка состоит только из пробелов, возвращаем пустую строку
+    // Р•СЃР»Рё СЃС‚СЂРѕРєР° СЃРѕСЃС‚РѕРёС‚ С‚РѕР»СЊРєРѕ РёР· РїСЂРѕР±РµР»РѕРІ, РІРѕР·РІСЂР°С‰Р°РµРј РїСѓСЃС‚СѓСЋ СЃС‚СЂРѕРєСѓ
     if (start == std::string::npos) {
         return "";
     }
 
-    // Возвращаем подстроку без пробелов в начале и в конце
+    // Р’РѕР·РІСЂР°С‰Р°РµРј РїРѕРґСЃС‚СЂРѕРєСѓ Р±РµР· РїСЂРѕР±РµР»РѕРІ РІ РЅР°С‡Р°Р»Рµ Рё РІ РєРѕРЅС†Рµ
     return str.substr(start, end - start + 1);
 }
 
 string ToDoModel::reverse(string str) {
-    // Переворачиваем строку вручную
+    // РџРµСЂРµРІРѕСЂР°С‡РёРІР°РµРј СЃС‚СЂРѕРєСѓ РІСЂСѓС‡РЅСѓСЋ
     int length = str.length();
     for (int i = 0; i < length / 2; ++i) {
-        // Обмениваем символы
+        // РћР±РјРµРЅРёРІР°РµРј СЃРёРјРІРѕР»С‹
         std::swap(str[i], str[length - i - 1]);
     }
     return str;
@@ -127,14 +127,14 @@ std::vector<Task> ToDoModel::getAllTasks(){
             vector<Task> AllTaskTemp;
             if (valueFilter == '#') { continue; }
             else if (valueFilter == '1') {
-                //выполненые
+                //РІС‹РїРѕР»РЅРµРЅС‹Рµ
                 for (size_t k = 0; k < AllTask.size(); k++)
                 {
                     if (AllTask[k].isCompleted()) { AllTaskTemp.push_back(AllTask[k]); }
                 }
             }
             else if (valueFilter == '0') {
-                //не выполненые
+                //РЅРµ РІС‹РїРѕР»РЅРµРЅС‹Рµ
                 for (size_t k = 0; k < AllTask.size(); k++)
                 {
                     if (!AllTask[k].isCompleted()) { AllTaskTemp.push_back(AllTask[k]); }
@@ -184,7 +184,7 @@ std::vector<Task> ToDoModel::getAllTasks(){
     }
     
     if (mainFilter=='1') {
-        //основной фильтр "Приоритет"
+        //РѕСЃРЅРѕРІРЅРѕР№ С„РёР»СЊС‚СЂ "РџСЂРёРѕСЂРёС‚РµС‚"
         sort(AllTask.begin(), AllTask.end(), [sort_priority_ascending, sort_by_date](const Task& a, const Task& b) {
             if (sort_priority_ascending == '#') {
                 if (sort_by_date == '1') {
@@ -223,7 +223,7 @@ std::vector<Task> ToDoModel::getAllTasks(){
     }
 
     if (mainFilter == '0') {
-        //основной фильтр "Дата"
+        //РѕСЃРЅРѕРІРЅРѕР№ С„РёР»СЊС‚СЂ "Р”Р°С‚Р°"
         sort(AllTask.begin(), AllTask.end(), [sort_priority_ascending, sort_by_date](const Task& a, const Task& b) {
             if (sort_priority_ascending == '#') {
                 if (sort_by_date == '1') {
@@ -267,14 +267,14 @@ std::vector<Task> ToDoModel::getAllTasks(){
 
 
 vector<string> ToDoModel::getSettingsFilter() {
-    // Открытие файла для чтения
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ
     std::ifstream infile("settingsFiltr.txt");
     if (!infile.is_open()) {
-        std::cerr << "Ошибка при открытии файла настроек фильтра!" << std::endl;
-        throw "Ошибка чтения файла";
+        std::cerr << "РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р° РЅР°СЃС‚СЂРѕРµРє С„РёР»СЊС‚СЂР°!" << std::endl;
+        throw "РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°";
     }
 
-    // Чтение файла построчно
+    // Р§С‚РµРЅРёРµ С„Р°Р№Р»Р° РїРѕСЃС‚СЂРѕС‡РЅРѕ
     vector<string> AllParametrs;
     std::string line;
     while (std::getline(infile, line)) {
@@ -282,35 +282,35 @@ vector<string> ToDoModel::getSettingsFilter() {
         AllParametrs.push_back(line);
     }
 
-    // Закрытие файла
+    // Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     infile.close();
 
     return AllParametrs;
 };
 
 void ToDoModel::saveSettings(vector<string>& AllParametrs) {
-    // Открытие файла для записи
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РґР»СЏ Р·Р°РїРёСЃРё
     std::ofstream outfile("settingsFiltr.txt");
     if (!outfile.is_open()) {
-        std::cerr << "Ошибка при открытии файла!" << std::endl;
-        throw "Ошибка открытия файла настроек фильтра";
+        std::cerr << "РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°!" << std::endl;
+        throw "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р° РЅР°СЃС‚СЂРѕРµРє С„РёР»СЊС‚СЂР°";
     }
 
     for (size_t i = 0; i < AllParametrs.size(); i++)
     {
         outfile << AllParametrs[i] << '\n';
     }
-    // Закрытие файла
+    // Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     outfile.close();
 };
 
 void ToDoModel::exportTask(string path) {
 
-    // Открытие файла для записи
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РґР»СЏ Р·Р°РїРёСЃРё
     std::ofstream outfile(path+"\\Tasks.csv");
     if (!outfile.is_open()) {
-        std::cerr << "Ошибка при открытии файла!" << std::endl;
-        throw "Ошибка открытия файла";
+        std::cerr << "РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°!" << std::endl;
+        throw "РћС€РёР±РєР° РѕС‚РєСЂС‹С‚РёСЏ С„Р°Р№Р»Р°";
     }
 
     for (size_t i = 0; i < tasks.size(); i++)
@@ -322,19 +322,19 @@ void ToDoModel::exportTask(string path) {
             << tasks[i].getDueDateSec()<< '|'
             << tasks[i].isCompleted()<<"\n";
     }
-    // Закрытие файла
+    // Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     outfile.close();
 }
 
 void ToDoModel::importTask(string path) {
-    // Открытие файла для чтения
+    // РћС‚РєСЂС‹С‚РёРµ С„Р°Р№Р»Р° РґР»СЏ С‡С‚РµРЅРёСЏ
     std::ifstream infile(path);
     if (!infile.is_open()) {
-        std::cerr << "Ошибка при открытии файла" << std::endl;
-        throw "Ошибка чтения файла";
+        std::cerr << "РћС€РёР±РєР° РїСЂРё РѕС‚РєСЂС‹С‚РёРё С„Р°Р№Р»Р°" << std::endl;
+        throw "РћС€РёР±РєР° С‡С‚РµРЅРёСЏ С„Р°Р№Р»Р°";
     }
 
-    // Чтение файла построчно
+    // Р§С‚РµРЅРёРµ С„Р°Р№Р»Р° РїРѕСЃС‚СЂРѕС‡РЅРѕ
     vector<pair<string, int>> Allcategory = Task::getAllcategori();
     std::string line;
     while (std::getline(infile, line)) {
@@ -380,7 +380,7 @@ void ToDoModel::importTask(string path) {
     }
     Task::setAllcategori(Allcategory);
 
-    // Закрытие файла
+    // Р—Р°РєСЂС‹С‚РёРµ С„Р°Р№Р»Р°
     infile.close();
 };
 
